@@ -48,3 +48,43 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.navbar-toggler')
         .addEventListener('click', toggleNavigation, false);
 }, false);
+
+
+
+//In-/Decrease font size
+
+function increaseFont(event) {
+    event.stopPropagation();
+    event.preventDefault();
+     // font size of root element
+    let rootFontSize = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('font-size'));
+    rootFontSize += 4;
+    document.documentElement.style.fontSize = rootFontSize + 'px';
+}
+
+function decreaseFont(event) {
+    event.stopPropagation();
+    event.preventDefault();
+     // font size of root element
+    let rootFontSize = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('font-size'));
+    rootFontSize -= 4;
+    document.documentElement.style.fontSize = rootFontSize + 'px';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document
+        .getElementById('font-increase-button')
+        .addEventListener('click', increaseFont, false);
+
+    document
+        .getElementById('font-decrease-button')
+        .addEventListener('click', decreaseFont, false);
+
+    document
+        .getElementById('font-increase-button-1')
+        .addEventListener('click', increaseFont, false);
+
+    document
+        .getElementById('font-decrease-button-1')
+        .addEventListener('click', decreaseFont, false);
+}, false);
