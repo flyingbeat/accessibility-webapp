@@ -9,15 +9,25 @@ function openMenu(event) {
     var currentDropDownButton = event.target;
     var currentDropDownMenu =
         currentDropDownButton.parentNode.querySelector('.dropdown-menu');
+    var currentDropDownToggle =
+        currentDropDownButton.parentNode.querySelector('.dropdown-toggle');
+    var dropDownToggles =
+        document.querySelectorAll('#nav-bar-content .dropdown .dropdown-toggle');
     var isOpen = currentDropDownMenu.classList.contains('show');
     var dropDownMenus =
         document.querySelectorAll('#nav-bar-content .dropdown .dropdown-menu');
     for (var j = 0; j < dropDownMenus.length; j++) {
         dropDownMenus[j].classList.remove('show');
     }
+    for (var j = 0; j < dropDownToggles.length; j++) {
+        dropDownToggles[j].setAttribute('aria-expanded', 'false')
+    }
 
     if (!isOpen) {
         currentDropDownMenu.classList.add('show');
+        currentDropDownToggle.setAttribute('aria-expanded', 'true')
+    } else {
+        currentDropDownToggle.setAttribute('aria-expanded', 'false')
     }
 }
 
