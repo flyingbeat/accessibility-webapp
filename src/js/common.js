@@ -11,11 +11,14 @@ function openMenu(event) {
         currentDropDownButton.parentNode.querySelector('.dropdown-menu');
     var currentDropDownToggle =
         currentDropDownButton.parentNode.querySelector('.dropdown-toggle');
-    var dropDownToggles =
-        document.querySelectorAll('#nav-bar-content .dropdown .dropdown-toggle');
-    var isOpen = currentDropDownMenu.classList.contains('show');
+
     var dropDownMenus =
         document.querySelectorAll('#nav-bar-content .dropdown .dropdown-menu');
+    var dropDownToggles =
+        document.querySelectorAll('#nav-bar-content .dropdown .dropdown-toggle');
+
+    var isOpen = currentDropDownMenu.classList.contains('show');
+
     for (var j = 0; j < dropDownMenus.length; j++) {
         dropDownMenus[j].classList.remove('show');
     }
@@ -26,8 +29,6 @@ function openMenu(event) {
     if (!isOpen) {
         currentDropDownMenu.classList.add('show');
         currentDropDownToggle.setAttribute('aria-expanded', 'true')
-    } else {
-        currentDropDownToggle.setAttribute('aria-expanded', 'false')
     }
 }
 
