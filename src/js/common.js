@@ -76,6 +76,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 openDropdownMenu.classList.remove('show');
                 var openDropdownToggle = openDropdownMenu.parentNode.querySelector('.dropdown-toggle');
                 openDropdownToggle.setAttribute('aria-expanded', 'false');
+                openDropdownToggle.focus();
+            }
+        }
+
+        if (event.key === 'Tab' || event.keyCode === 9) {
+            var openDropdownMenu = document.querySelector('.dropdown-menu.show');
+            if (openDropdownMenu) {
+                var focusableElements = openDropdownMenu.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                var lastFocusableElement = focusableElements[focusableElements.length - 1];
+                var isLastElementFocused = (document.activeElement === lastFocusableElement);
+
+                // Check if the last focusable element in the dropdown has focus
+                if (isLastElementFocused) {
+                    openDropdownMenu.classList.remove('show');
+                    var openDropdownToggle = openDropdownMenu.parentNode.querySelector('.dropdown-toggle');
+                    openDropdownToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        var clickedElement = event.target;
+        // Check if the clicked element is within a dropdown or not
+        var isDropdownToggle = clickedElement.classList.contains('dropdown-toggle');
+        var isDropdownMenu = clickedElement.classList.contains('dropdown-menu');
+        var isInsideDropdown = isDropdownToggle || isDropdownMenu;
+
+        if (!isInsideDropdown) {
+            // Close any open dropdowns
+            var openDropdownMenu = document.querySelector('.dropdown-menu.show');
+            if (openDropdownMenu) {
+                openDropdownMenu.classList.remove('show');
+                var openDropdownToggle = openDropdownMenu.parentNode.querySelector('.dropdown-toggle');
+                openDropdownToggle.setAttribute('aria-expanded', 'false');
             }
         }
     });
