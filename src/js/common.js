@@ -52,7 +52,16 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('#nav-bar-content .dropdown-toggle');
 
         for (var i = 0; i < dropDownToggles.length; i++) {
-        dropDownToggles[i].addEventListener('click', openMenu, false);
+            dropDownToggles[i].addEventListener('click', openMenu, false);
+            dropDownToggles[i].addEventListener('keydown', function(event) {
+                // Check if the pressed key is the space bar
+                if (event.key === ' ' || event.keyCode === 32) {
+                    // Prevent the default action
+                    event.preventDefault();
+                    // Open the dropdown menu
+                    openMenu(event);
+                }
+            });
     }
 
     document.querySelector('.navbar-toggler')
