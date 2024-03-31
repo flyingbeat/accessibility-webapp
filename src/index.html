@@ -238,10 +238,12 @@
         <div class="col-12 col-lg-6" aria-label="News & Events">
           <div class="p-4 mt-4 mr-lg-3 bg-white news">
             <h1 class="text-primary mb-4 title">News &amp; events</h1>
-            <div class="media mt-4">
+            <article class="media mt-4" aria-labelledby="global-temperature-record-title">
               <img class="my-1 mr-2 rounded-right" src="./img/iceberg.jpg" />
               <div class="media-body">
-                <h2 class="text-info mt-0 mb-2 subtitle">
+                <!-- not sure if h2 is the correct tag (slides say h1 for article title but
+                 h1 is already chosen for the News & events title-->
+                <h2 class="text-info mt-0 mb-2 subtitle" id=”global-temperature-record-title">
                   <a href="./article.html" role="button"
                     >Global temperature record</a
                   >
@@ -255,11 +257,11 @@
                   <div>2018/01/15</div>
                 </div>
               </div>
-            </div>
-            <div class="media mt-4">
+            </article>
+            <article class="media mt-4" aria-labelledby="At-iam-decimum-title">
               <img class="my-1 mr-2 rounded-right" src="./img/universe.jpg" />
               <div class="media-body">
-                <h2 class="text-info mt-0 mb-2 subtitle">
+                <h2 class="text-info mt-0 mb-2 subtitle" id=”At-iam-decimum-title-title">
                   <a href="./empty.html?title=Article" role="button"
                     >At iam decimum annum in spelunca iacet</a
                   >
@@ -274,11 +276,11 @@
                   <div>2018/01/12</div>
                 </div>
               </div>
-            </div>
-            <div class="media mt-4">
+            </article>
+            <article class="media mt-4" aria-labelledby="Quo-plebiscito-title">
               <img class="my-1 mr-2 rounded-right" src="./img/robots.jpg" />
               <div class="media-body">
-                <h2 class="text-info mt-0 mb-2 subtitle">
+                <h2 class="text-info mt-0 mb-2 subtitle" id="Quo-plebiscito-title">
                   <a href="./empty.html?title=Article" role="button"
                     >Quo plebiscito decreta a senatu est consuli quaestio Cn</a
                   >
@@ -294,7 +296,7 @@
                   <div>2017/12/30</div>
                 </div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
         <aside class="col-12 col-lg-6" aria-label="Studies">
