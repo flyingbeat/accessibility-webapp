@@ -66,6 +66,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('.navbar-toggler')
         .addEventListener('click', toggleNavigation, false);
+
+    document.addEventListener('keydown', function(event) {
+        // Check if the pressed key is the escape key
+        if (event.key === 'Escape' || event.keyCode === 27) {
+            // Close the dropdown if it's open
+            var openDropdownMenu = document.querySelector('.dropdown-menu.show');
+            if (openDropdownMenu) {
+                openDropdownMenu.classList.remove('show');
+                var openDropdownToggle = openDropdownMenu.parentNode.querySelector('.dropdown-toggle');
+                openDropdownToggle.setAttribute('aria-expanded', 'false');
+            }
+        }
+    });
 }, false);
 
 
