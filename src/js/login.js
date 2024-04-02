@@ -41,14 +41,17 @@ function login(event) {
     } else if (email.validity.valueMissing) {
         setInvalid(email);
         hasError = true;
+        document.getElementById('login-email-error').innerHTML = 'Email is required';
     } else {
         setInvalid(email);
+        document.getElementById('login-email-error').innerHTML = 'Email is invalid';
         hasError = true;
     }
 
     var password = document.getElementById('login-password-control');
     if (password.value.trim().length == 0) {
         setInvalid(password);
+        document.getElementById('login-password-error').innerHTML = 'Password is required';
         hasError = true;
     } else {
         setValid(password);
@@ -76,9 +79,11 @@ function forgot(event) {
         setValid(email);
     } else if (email.validity.valueMissing) {
         setInvalid(email);
+        document.getElementById('login-email-error').innerHTML = 'Email is required';
         hasError = true;
     } else {
         setInvalid(email);
+        document.getElementById('login-email-error').innerHTML = 'Email is invalid';
         hasError = true;
     }
 
@@ -105,6 +110,7 @@ function register(event) {
     var firstName = document.getElementById('register-first-name-control');
     if (firstName.value.trim().length == 0) {
         setInvalid(firstName);
+        document.getElementById('signup-fn-error').innerHTML = 'First name is required';
         hasError = true;
     } else if (firstName.validity.valid) {
         setValid(firstName);
@@ -113,6 +119,7 @@ function register(event) {
     var lastName = document.getElementById('register-last-name-control');
     if (lastName.value.trim().length == 0) {
         setInvalid(lastName);
+        document.getElementById('signup-ln-error').innerHTML = 'Last name is required';
         hasError = true;
     } else if (lastName.validity.valid) {
         setValid(lastName);
@@ -123,9 +130,11 @@ function register(event) {
         setValid(email);
     } else if (email.validity.valueMissing) {
         setInvalid(email);
+        document.getElementById('signup-email-error').innerHTML = 'Email is required';
         hasError = true;
     } else {
         setInvalid(email);
+        document.getElementById('signup-email-error').innerHTML = 'Email is invalid';
         hasError = true;
     }
 
@@ -133,15 +142,19 @@ function register(event) {
     var passwordValue = password.value.trim();
     if (passwordValue.length < 8) {
         setInvalid(password);
+        document.getElementById('signup-password-error').innerHTML = 'Password needs to be at least 8 characters';
         hasError = true;
     } else if (passwordValue.length > 16) {
         setInvalid(password);
+        document.getElementById('signup-password-error').innerHTML = 'Password needs to be less than 16 characters';
         hasError = true;
     } else if (passwordValue.match(/[a-zA-Z]+/) == null) {
         setInvalid(password);
+        document.getElementById('signup-password-error').innerHTML = 'Password needs to contain at least one letter';
         hasError = true;
     } else if (passwordValue.match(/[0-9]+/) == null) {
         setInvalid(password);
+        document.getElementById('signup-password-error').innerHTML = 'Password needs to contain at least one number';
         hasError = true;
     } else {
         setValid(password);
@@ -150,9 +163,11 @@ function register(event) {
     var programme = document.getElementById('register-programme-control');
     if (programme.validity.valueMissing) {
         setInvalid(programme);
+        document.getElementById('signup-programme-error').innerHTML = 'Programme is required';
         hasError = true;
     } else if (!programme.validity.valid) {
         setInvalid(programme);
+        document.getElementById('signup-programme-error').innerHTML = 'Programme is invalid';
         hasError = true;
     } else {
         setValid(programme);
