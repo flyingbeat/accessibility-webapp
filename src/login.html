@@ -14,7 +14,7 @@
   </head>
 
   <body class="bg-light">
-    <div class="container-fluid d-none d-lg-block my-4 header">
+    <header class="container-fluid d-none d-lg-block my-4 header" role="banner">
       <div class="container">
         <div class="row no-gutters">
           <div class="col-8 media">
@@ -35,12 +35,14 @@
                 <button
                   class="btn btn-dark font-increase-button"
                   id="font-increase-button"
+                  aria-label="Increase font size"
                 >
                   A+
                 </button>
                 <button
                   class="btn btn-dark font-decrease-button"
                   id="font-decrease-button"
+                  aria-label="Decrease font size"
                 >
                   A-
                 </button>
@@ -49,9 +51,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </header>
 
-    <div class="container-fluid bg-dark nav">
+    <nav class="container-fluid bg-dark nav" role="navigation">
       <div class="container">
         <div class="navbar navbar-dark bg-dark navbar-expand-lg px-0">
           <div class="navbar-brand d-lg-none">
@@ -69,13 +71,14 @@
           <div class="collapse navbar-collapse" id="nav-bar-content">
             <div class="navbar-nav mr-auto">
               <div class="nav-item">
-                <a class="nav-link" href="./">Homepage</a>
+                <a class="nav-link" href="./" role="button">Homepage</a>
               </div>
               <div class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
                   id="nav-bar-faculties"
+                  role="button"
                   >Faculties</a
                 >
                 <div class="dropdown-menu">
@@ -83,6 +86,7 @@
                     <a
                       class="dropdown-item"
                       href="./empty.html?title=Applied+sciences"
+                      role="button"
                       >Applied sciences</a
                     >
                   </div>
@@ -90,6 +94,7 @@
                     <a
                       class="dropdown-item"
                       href="./empty.html?title=Architecture+%26+planning"
+                      role="button"
                       >Architecture &amp; planning</a
                     >
                   </div>
@@ -97,6 +102,7 @@
                     <a
                       class="dropdown-item"
                       href="./empty.html?title=Construction+%26+environment"
+                      role="button"
                       >Construction &amp; environment</a
                     >
                   </div>
@@ -104,6 +110,7 @@
                     <a
                       class="dropdown-item"
                       href="./empty.html?title=Engineering"
+                      role="button"
                       >Engineering</a
                     >
                   </div>
@@ -111,6 +118,7 @@
                     <a
                       class="dropdown-item"
                       href="./empty.html?title=Health+%26+social+sciences"
+                      role="button"
                       >Health &amp; social sciences</a
                     >
                   </div>
@@ -121,16 +129,23 @@
                   class="nav-link dropdown-toggle"
                   href="#"
                   id="nav-bar-education"
+                  role="button"
                   >Education &amp; research</a
                 >
                 <div class="dropdown-menu">
                   <div>
-                    <a class="dropdown-item" href="./empty.html?title=Bachelor"
+                    <a
+                      class="dropdown-item"
+                      href="./empty.html?title=Bachelor"
+                      role="button"
                       >Bachelor</a
                     >
                   </div>
                   <div>
-                    <a class="dropdown-item" href="./empty.html?title=Master"
+                    <a
+                      class="dropdown-item"
+                      href="./empty.html?title=Master"
+                      role="button"
                       >Master</a
                     >
                   </div>
@@ -138,11 +153,15 @@
                     <a
                       class="dropdown-item"
                       href="./empty.html?title=Continuing+education"
+                      role="button"
                       >Continuing education</a
                     >
                   </div>
                   <div>
-                    <a class="dropdown-item" href="./empty.html?title=Doctorate"
+                    <a
+                      class="dropdown-item"
+                      href="./empty.html?title=Doctorate"
+                      role="button"
                       >Doctorate</a
                     >
                   </div>
@@ -153,6 +172,7 @@
                   class="nav-link dropdown-toggle"
                   href="#"
                   id="nav-bar-industry"
+                  role="button"
                   >Industry &amp; partners</a
                 >
                 <div class="dropdown-menu">
@@ -160,6 +180,7 @@
                     <a
                       class="dropdown-item"
                       href="./empty.html?title=Public+relations"
+                      role="button"
                       >Public relations</a
                     >
                   </div>
@@ -167,6 +188,7 @@
                     <a
                       class="dropdown-item"
                       href="./empty.html?title=Commercialization"
+                      role="button"
                       >Commercialization</a
                     >
                   </div>
@@ -174,6 +196,7 @@
                     <a
                       class="dropdown-item"
                       href="./empty.html?title=Sponsors+%26+partners"
+                      role="button"
                       >Sponsors &amp; partners</a
                     >
                   </div>
@@ -182,7 +205,7 @@
             </div>
             <div class="navbar-nav">
               <div class="nav-item">
-                <a class="nav-link" href="./login.html">Login</a>
+                <a class="nav-link" href="./login.html" role="button">Login</a>
               </div>
             </div>
           </div>
@@ -193,12 +216,16 @@
               <button
                 class="btn btn-dark text-white font-increase-button"
                 id="font-increase-button-1"
+                role="button"
+                aria-label="Increase font size"
               >
                 A+
               </button>
               <button
                 class="btn btn-dark text-white font-decrease-button"
                 id="font-decrease-button-1"
+                role="button"
+                aria-label="Decrease font size"
               >
                 A-
               </button>
@@ -206,16 +233,16 @@
           </div>
         </div>
       </div>
-    </div>
+    </nav>
 
-    <div class="container main" id="main">
+    <main class="container main" id="main" role="main">
       <div class="row no-gutters">
-        <div class="col-12 col-md-5 mt-4 login">
+        <section class="col-12 col-md-5 mt-4 login" aria-label="Login">
           <div class="p-4 mr-md-3 bg-white">
-            <div class="text-primary mb-4 title">Login</div>
-            <div class="text-danger mb-4 d-none subtitle" id="login-error">
+            <h1 class="text-primary mb-4 title">Login</h1>
+            <h2 class="text-danger mb-4 d-none subtitle" id="login-error">
               Please correct the error(s)
-            </div>
+            </h2>
             <ul class="sr-only" id="login-error-list"></ul>
             <form id="login-form" novalidate>
               <div class="form-group">
@@ -230,7 +257,7 @@
                   required
                   style="position: relative; top: 10px"
                 />
-                <label style="position: relative; top: -60px">Email</label>
+                <p style="position: relative; top: -60px">Email</p>
                 <small id="login-email-error"></small>
               </div>
               <div class="form-group">
@@ -245,7 +272,7 @@
                   required
                   style="position: relative; top: 10px"
                 />
-                <label style="position: relative; top: -60px">Password</label>
+                <p style="position: relative; top: -60px">Password</p>
                 <small class="login-password-error"></small>
               </div>
               <div class="form-group">
@@ -277,14 +304,17 @@
               </button>
             </form>
           </div>
-        </div>
+        </section>
 
-        <div class="col-12 col-md-7 mt-4 register">
+        <section
+          class="col-12 col-md-7 mt-4 register"
+          aria-label="Create new account"
+        >
           <div class="p-4 bg-white">
-            <div class="text-primary mb-4 title">Create new account</div>
-            <div class="text-danger mb-4 d-none subtitle" id="register-error">
+            <h1 class="text-primary mb-4 title">Create new account</h1>
+            <h2 class="text-danger mb-4 d-none subtitle" id="register-error">
               Please correct the error(s)
-            </div>
+            </h2>
             <ul class="sr-only" id="register-error-list"></ul>
             <div>
               <form id="register-form" novalidate>
@@ -433,42 +463,47 @@
                 </button>
               </form>
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </div>
 
-    <div class="container-fluid bg-dark mt-4 footer">
+    <footer class="container-fluid bg-dark mt-4 footer" role="contentinfo">
       <div class="container text-center py-3">
         <div class="row justify-content-around">
           <a
             class="col-12 col-md mr-3 text-white"
             href="./empty.html?title=About"
+            role="button"
             >About</a
           >
           <a
             class="col-12 col-md mr-3 text-white"
             href="./empty.html?title=Contact+us"
+            role="button"
             >Contact us</a
           >
           <a
             class="col-12 col-md mr-3 text-white"
             href="./empty.html?title=Help"
+            role="button"
             >Help</a
           >
           <a
             class="col-12 col-md mr-3 text-white"
             href="./empty.html?title=Terms+of+services"
+            role="button"
             >Terms of service</a
           >
           <a
             class="col-12 col-md mr-3 text-white"
             href="./empty.html?title=Privacy+policy"
+            role="button"
             >Privacy policy</a
           >
         </div>
       </div>
-    </div>
+    </footer>
 
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/popper.js"></script>

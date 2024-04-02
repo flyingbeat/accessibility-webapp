@@ -3,8 +3,8 @@
  * @param {object} element - The DOM element
  */
 function setValid(element) {
-    element.classList.remove('is-invalid');
-    element.classList.add('is-valid');
+  element.classList.remove("is-invalid");
+  element.classList.add("is-valid");
 }
 
 /**
@@ -12,8 +12,8 @@ function setValid(element) {
  * @param {object} element - The DOM element
  */
 function setInvalid(element) {
-    element.classList.remove('is-valid');
-    element.classList.add('is-invalid');
+  element.classList.remove("is-valid");
+  element.classList.add("is-invalid");
 }
 
 /**
@@ -21,8 +21,8 @@ function setInvalid(element) {
  * @param {object} element - The DOM element
  */
 function removeValidation(element) {
-    element.classList.remove('is-valid');
-    element.classList.remove('is-invalid');
+  element.classList.remove("is-valid");
+  element.classList.remove("is-invalid");
 }
 
 /**
@@ -30,10 +30,10 @@ function removeValidation(element) {
  * @param {object} event - The DOM event
  */
 function login(event) {
-    event.preventDefault();
-    event.stopPropagation();
+  event.preventDefault();
+  event.stopPropagation();
 
-    var hasError = false;
+  var hasError = false;
 
     var email = document.getElementById('login-email-control');
     if (email.validity.valid) {
@@ -57,11 +57,11 @@ function login(event) {
         setValid(password);
     }
 
-    if (hasError) {
-        document.getElementById('login-error').classList.remove('d-none');
-    } else {
-        document.getElementById('login-error').classList.add('d-none');
-    }
+  if (hasError) {
+    document.getElementById("login-error").classList.remove("d-none");
+  } else {
+    document.getElementById("login-error").classList.add("d-none");
+  }
 }
 
 /**
@@ -69,10 +69,10 @@ function login(event) {
  * @param {object} event - The DOM event
  */
 function forgot(event) {
-    event.preventDefault();
-    event.stopPropagation();
+  event.preventDefault();
+  event.stopPropagation();
 
-    var hasError = false;
+  var hasError = false;
 
     var email = document.getElementById('login-email-control');
     if (email.validity.valid) {
@@ -87,14 +87,14 @@ function forgot(event) {
         hasError = true;
     }
 
-    var password = document.getElementById('login-password-control');
-    removeValidation(password);
+  var password = document.getElementById("login-password-control");
+  removeValidation(password);
 
-    if (hasError) {
-        document.getElementById('login-error').classList.remove('d-none');
-    } else {
-        document.getElementById('login-error').classList.add('d-none');
-    }
+  if (hasError) {
+    document.getElementById("login-error").classList.remove("d-none");
+  } else {
+    document.getElementById("login-error").classList.add("d-none");
+  }
 }
 
 /**
@@ -102,10 +102,10 @@ function forgot(event) {
  * @param {object} event - The DOM event
  */
 function register(event) {
-    event.preventDefault();
-    event.stopPropagation();
+  event.preventDefault();
+  event.stopPropagation();
 
-    var hasError = false;
+  var hasError = false;
 
     var firstName = document.getElementById('register-first-name-control');
     if (firstName.value.trim().length == 0) {
@@ -173,23 +173,27 @@ function register(event) {
         setValid(programme);
     }
 
-    if (hasError) {
-        document.getElementById('register-error').classList.remove('d-none');
-    } else {
-        document.getElementById('register-error').classList.add('d-none');
-    }
+  if (hasError) {
+    document.getElementById("register-error").classList.remove("d-none");
+  } else {
+    document.getElementById("register-error").classList.add("d-none");
+  }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
     document
-        .getElementById('login-login-button')
-        .addEventListener('click', login, false);
+      .getElementById("login-login-button")
+      .addEventListener("click", login, false);
 
     document
-        .getElementById('login-forgot-button')
-        .addEventListener('click', forgot, false);
+      .getElementById("login-forgot-button")
+      .addEventListener("click", forgot, false);
 
     document
-        .getElementById('register-register-button')
-        .addEventListener('click', register, false);
-}, false);
+      .getElementById("register-register-button")
+      .addEventListener("click", register, false);
+  },
+  false
+);
