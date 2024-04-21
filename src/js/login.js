@@ -20,10 +20,6 @@ function setInvalid(element) {
  * Remove validation information from the element
  * @param {object} element - The DOM element
  */
-function removeValidation(element) {
-  element.classList.remove("is-valid");
-  element.classList.remove("is-invalid");
-}
 
 /**
  * Validate the login form and try to log the user in
