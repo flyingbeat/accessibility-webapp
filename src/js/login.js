@@ -20,6 +20,10 @@ function setInvalid(element) {
  * Remove validation information from the element
  * @param {object} element - The DOM element
  */
+function removeValidation(element) {
+  element.classList.remove("is-valid");
+  element.classList.remove("is-invalid");
+}
 
 /**
  * Validate the login form and try to log the user in
@@ -31,27 +35,31 @@ function login(event) {
 
   var hasError = false;
 
-    var email = document.getElementById('login-email-control');
-    if (email.validity.valid) {
-        setValid(email);
-    } else if (email.validity.valueMissing) {
-        setInvalid(email);
-        hasError = true;
-        document.getElementById('login-email-error').innerHTML = 'Email is required';
-    } else {
-        setInvalid(email);
-        document.getElementById('login-email-error').innerHTML = 'Email is invalid';
-        hasError = true;
-    }
+  var email = document.getElementById("login-email-control");
+  if (email.validity.valid) {
+    setValid(email);
+    hasError = false;
+  } else if (email.validity.valueMissing) {
+    setInvalid(email);
+    hasError = true;
+    document.getElementById("login-email-error").innerHTML =
+      "Email is required";
+  } else {
+    setInvalid(email);
+    document.getElementById("login-email-error").innerHTML = "Email is invalid";
+    hasError = true;
+  }
 
-    var password = document.getElementById('login-password-control');
-    if (password.value.trim().length == 0) {
-        setInvalid(password);
-        document.getElementById('login-password-error').innerHTML = 'Password is required';
-        hasError = true;
-    } else {
-        setValid(password);
-    }
+  var password = document.getElementById("login-password-control");
+  console.log(password.value.trim().length);
+  if (password.value.trim().length == 0) {
+    setInvalid(password);
+    document.getElementById("login-password-error").innerHTML =
+      "Password is required";
+    hasError = true;
+  } else {
+    setValid(password);
+  }
 
   if (hasError) {
     document.getElementById("login-error").classList.remove("d-none");
@@ -70,18 +78,19 @@ function forgot(event) {
 
   var hasError = false;
 
-    var email = document.getElementById('login-email-control');
-    if (email.validity.valid) {
-        setValid(email);
-    } else if (email.validity.valueMissing) {
-        setInvalid(email);
-        document.getElementById('login-email-error').innerHTML = 'Email is required';
-        hasError = true;
-    } else {
-        setInvalid(email);
-        document.getElementById('login-email-error').innerHTML = 'Email is invalid';
-        hasError = true;
-    }
+  var email = document.getElementById("login-email-control");
+  if (email.validity.valid) {
+    setValid(email);
+  } else if (email.validity.valueMissing) {
+    setInvalid(email);
+    document.getElementById("login-email-error").innerHTML =
+      "Email is required";
+    hasError = true;
+  } else {
+    setInvalid(email);
+    document.getElementById("login-email-error").innerHTML = "Email is invalid";
+    hasError = true;
+  }
 
   var password = document.getElementById("login-password-control");
   removeValidation(password);
@@ -103,71 +112,81 @@ function register(event) {
 
   var hasError = false;
 
-    var firstName = document.getElementById('register-first-name-control');
-    if (firstName.value.trim().length == 0) {
-        setInvalid(firstName);
-        document.getElementById('signup-fn-error').innerHTML = 'First name is required';
-        hasError = true;
-    } else if (firstName.validity.valid) {
-        setValid(firstName);
-    }
+  var firstName = document.getElementById("register-first-name-control");
+  if (firstName.value.trim().length == 0) {
+    setInvalid(firstName);
+    document.getElementById("signup-fn-error").innerHTML =
+      "First name is required";
+    hasError = true;
+  } else if (firstName.validity.valid) {
+    setValid(firstName);
+  }
 
-    var lastName = document.getElementById('register-last-name-control');
-    if (lastName.value.trim().length == 0) {
-        setInvalid(lastName);
-        document.getElementById('signup-ln-error').innerHTML = 'Last name is required';
-        hasError = true;
-    } else if (lastName.validity.valid) {
-        setValid(lastName);
-    }
+  var lastName = document.getElementById("register-last-name-control");
+  if (lastName.value.trim().length == 0) {
+    setInvalid(lastName);
+    document.getElementById("signup-ln-error").innerHTML =
+      "Last name is required";
+    hasError = true;
+  } else if (lastName.validity.valid) {
+    setValid(lastName);
+  }
 
-    var email = document.getElementById('register-email-control');
-    if (email.validity.valid) {
-        setValid(email);
-    } else if (email.validity.valueMissing) {
-        setInvalid(email);
-        document.getElementById('signup-email-error').innerHTML = 'Email is required';
-        hasError = true;
-    } else {
-        setInvalid(email);
-        document.getElementById('signup-email-error').innerHTML = 'Email is invalid';
-        hasError = true;
-    }
+  var email = document.getElementById("register-email-control");
+  if (email.validity.valid) {
+    setValid(email);
+  } else if (email.validity.valueMissing) {
+    setInvalid(email);
+    document.getElementById("signup-email-error").innerHTML =
+      "Email is required";
+    hasError = true;
+  } else {
+    setInvalid(email);
+    document.getElementById("signup-email-error").innerHTML =
+      "Email is invalid";
+    hasError = true;
+  }
 
-    var password = document.getElementById('register-password-control');
-    var passwordValue = password.value.trim();
-    if (passwordValue.length < 8) {
-        setInvalid(password);
-        document.getElementById('signup-password-error').innerHTML = 'Password needs to be at least 8 characters';
-        hasError = true;
-    } else if (passwordValue.length > 16) {
-        setInvalid(password);
-        document.getElementById('signup-password-error').innerHTML = 'Password needs to be less than 16 characters';
-        hasError = true;
-    } else if (passwordValue.match(/[a-zA-Z]+/) == null) {
-        setInvalid(password);
-        document.getElementById('signup-password-error').innerHTML = 'Password needs to contain at least one letter';
-        hasError = true;
-    } else if (passwordValue.match(/[0-9]+/) == null) {
-        setInvalid(password);
-        document.getElementById('signup-password-error').innerHTML = 'Password needs to contain at least one number';
-        hasError = true;
-    } else {
-        setValid(password);
-    }
+  var password = document.getElementById("register-password-control");
+  var passwordValue = password.value.trim();
+  if (passwordValue.length < 8) {
+    setInvalid(password);
+    document.getElementById("signup-password-error").innerHTML =
+      "Password needs to be at least 8 characters";
+    hasError = true;
+  } else if (passwordValue.length > 16) {
+    setInvalid(password);
+    document.getElementById("signup-password-error").innerHTML =
+      "Password needs to be less than 16 characters";
+    hasError = true;
+  } else if (passwordValue.match(/[a-zA-Z]+/) == null) {
+    setInvalid(password);
+    document.getElementById("signup-password-error").innerHTML =
+      "Password needs to contain at least one letter";
+    hasError = true;
+  } else if (passwordValue.match(/[0-9]+/) == null) {
+    setInvalid(password);
+    document.getElementById("signup-password-error").innerHTML =
+      "Password needs to contain at least one number";
+    hasError = true;
+  } else {
+    setValid(password);
+  }
 
-    var programme = document.getElementById('register-programme-control');
-    if (programme.validity.valueMissing) {
-        setInvalid(programme);
-        document.getElementById('signup-programme-error').innerHTML = 'Programme is required';
-        hasError = true;
-    } else if (!programme.validity.valid) {
-        setInvalid(programme);
-        document.getElementById('signup-programme-error').innerHTML = 'Programme is invalid';
-        hasError = true;
-    } else {
-        setValid(programme);
-    }
+  var programme = document.getElementById("register-programme-control");
+  if (programme.validity.valueMissing) {
+    setInvalid(programme);
+    document.getElementById("signup-programme-error").innerHTML =
+      "Programme is required";
+    hasError = true;
+  } else if (!programme.validity.valid) {
+    setInvalid(programme);
+    document.getElementById("signup-programme-error").innerHTML =
+      "Programme is invalid";
+    hasError = true;
+  } else {
+    setValid(programme);
+  }
 
   if (hasError) {
     document.getElementById("register-error").classList.remove("d-none");

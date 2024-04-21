@@ -276,6 +276,7 @@
                   />
                   <label style="position: relative; top: -60px">Email</label>
                   <small
+                    class="text-danger"
                     style="position: absolute; left: 30px"
                     id="login-email-error"
                   ></small>
@@ -293,7 +294,11 @@
                     style="top: 10px"
                   />
                   <label style="position: relative; top: -60px">Password</label>
-                  <small class="login-password-error"></small>
+                  <small
+                    class="text-danger"
+                    style="position: absolute; left: 30px"
+                    id="login-password-error"
+                  ></small>
                 </div>
                 <div class="form-group">
                   <div class="form-check">
@@ -339,7 +344,6 @@
                 <fieldset class="form-group">
                   <legend class="form-label" id="register-basic-legend">
                     Basic information
-                    <small class="text-secondary">(optional)</small>
                   </legend>
                   <div class="form-row">
                     <div class="form-group col-12 col-lg-6">
@@ -354,7 +358,7 @@
                         aria-required="true"
                         required
                       />
-                      <small class="signup-fn-error"></small>
+                      <small id="signup-fn-error" class="text-danger"></small>
                     </div>
                     <div class="form-group col-12 col-lg-6">
                       <label>Last name</label>
@@ -368,7 +372,7 @@
                         aria-required="true"
                         required
                       />
-                      <small class="signup-ln-error"></small>
+                      <small id="signup-ln-error" class="text-danger"></small>
                     </div>
                   </div>
                   <div class="form-group">
@@ -383,7 +387,7 @@
                       aria-required="true"
                       required
                     />
-                    <small class="signup-email-error"></small>
+                    <small id="signup-email-error" class="text-danger"></small>
                   </div>
                   <div class="form-group">
                     <label>Password</label>
@@ -397,7 +401,7 @@
                       aria-required="true"
                       required
                     />
-                    <small class="signup-password-error"></small>
+                    <small id="signup-password-error" class="text-danger"></small>
                     <small
                       id="register-password-help"
                       class="form-text text-muted"
@@ -421,7 +425,7 @@
                       <option value="continuing">Continuing education</option>
                       <option value="doctorate">Doctorate</option>
                     </select>
-                    <small class="signup-programme-error"></small>
+                    <small id="signup-programme-error" class="text-danger"></small>
                   </div>
                 </fieldset>
                 <fieldset class="form-group">
