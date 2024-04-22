@@ -274,7 +274,11 @@
                     required
                     style="top: 10px"
                   />
-                  <label style="position: relative; top: -60px">Email</label>
+                  <label
+                    for="login-email-control"
+                    style="position: relative; top: -60px"
+                    >Email</label
+                  >
                   <small
                     class="text-danger"
                     style="position: absolute; left: 30px"
@@ -293,7 +297,11 @@
                     required
                     style="top: 10px"
                   />
-                  <label style="position: relative; top: -60px">Password</label>
+                  <label
+                    for="login-password-control"
+                    style="position: relative; top: -60px"
+                    >Password</label
+                  >
                   <small
                     class="text-danger"
                     style="position: absolute; left: 30px"
@@ -310,7 +318,9 @@
                       value="remember"
                       id="login-remmeber-control"
                     />
-                    <label class="form-check-label">Keep me logged in</label>
+                    <label for="login-remmeber-control" class="form-check-label"
+                      >Keep me logged in</label
+                    >
                   </div>
                 </div>
                 <button
@@ -347,7 +357,9 @@
                   </legend>
                   <div class="form-row">
                     <div class="form-group col-12 col-lg-6">
-                      <label>First name</label>
+                      <label for="register-first-name-control"
+                        >First name</label
+                      >
                       <input
                         class="form-control"
                         type="text"
@@ -361,7 +373,7 @@
                       <small id="signup-fn-error" class="text-danger"></small>
                     </div>
                     <div class="form-group col-12 col-lg-6">
-                      <label>Last name</label>
+                      <label for="register-last-name-control">Last name</label>
                       <input
                         class="form-control"
                         type="text"
@@ -376,7 +388,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label>Email</label>
+                    <label for="register-email-control">Email</label>
                     <input
                       class="form-control"
                       id="register-email-control"
@@ -390,7 +402,7 @@
                     <small id="signup-email-error" class="text-danger"></small>
                   </div>
                   <div class="form-group">
-                    <label>Password</label>
+                    <label for="register-password-control">Password</label>
                     <input
                       class="form-control"
                       id="register-password-control"
@@ -401,16 +413,17 @@
                       aria-required="true"
                       required
                     />
-                    <small id="signup-password-error" class="text-danger"></small>
                     <small
-                      id="register-password-help"
-                      class="form-text text-muted"
+                      id="signup-password-error"
+                      class="text-danger"
+                    ></small>
+                    <small class="form-text text-muted"
                       >Your password must be 8-16 characters long and contain
                       both letters and numbers.</small
                     >
                   </div>
                   <div class="form-group">
-                    <label>Programme</label>
+                    <label for="register-programme-control">Programme</label>
                     <select
                       class="form-control"
                       id="register-programme-control"
@@ -425,7 +438,10 @@
                       <option value="continuing">Continuing education</option>
                       <option value="doctorate">Doctorate</option>
                     </select>
-                    <small id="signup-programme-error" class="text-danger"></small>
+                    <small
+                      id="signup-programme-error"
+                      class="text-danger"
+                    ></small>
                   </div>
                 </fieldset>
                 <fieldset class="form-group">
@@ -434,7 +450,7 @@
                     <small class="text-secondary">(optional)</small>
                   </legend>
                   <div class="form-group">
-                    <label>Street</label>
+                    <label for="register-street-control">Street</label>
                     <input
                       class="form-control"
                       id="register-street-control"
@@ -446,7 +462,7 @@
                   </div>
                   <div class="form-row">
                     <div class="form-group col-12 col-lg-5">
-                      <label>City</label>
+                      <label for="register-city-control">City</label>
                       <input
                         class="form-control"
                         id="register-city-control"
@@ -457,7 +473,7 @@
                       />
                     </div>
                     <div class="form-group col-12 col-lg-4">
-                      <label>State</label>
+                      <label for="register-state-control">State</label>
                       <input
                         class="form-control"
                         id="register-state-control"
@@ -468,7 +484,7 @@
                       />
                     </div>
                     <div class="form-group col-12 col-lg-3">
-                      <label>Zip</label>
+                      <label for="register-zip-control">Zip</label>
                       <input
                         class="form-control"
                         id="register-zip-control"
